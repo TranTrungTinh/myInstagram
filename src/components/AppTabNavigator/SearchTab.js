@@ -13,7 +13,7 @@ export default class SearchTab extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Search Tab</Text>
+        <Text>Coming soon...</Text>
       </View>
     );
   }

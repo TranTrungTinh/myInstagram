@@ -13,7 +13,7 @@ export default class LikeTab extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Like Tab</Text>
+        <Text>Coming soon...</Text>
       </View>
     );
   }

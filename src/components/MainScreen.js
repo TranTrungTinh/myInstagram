@@ -46,7 +46,7 @@ const AppTabNavigator = TabNavigator({
   tabBarOptions: {
     style: {
       ...Platform.select({
-        android: {
+        ios: {
           backgroundColor: 'white'
         }
       })

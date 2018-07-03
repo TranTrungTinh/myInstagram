@@ -13,7 +13,7 @@ export default class AddMediaTab extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Add media</Text>
+        <Text>Coming soon...</Text>
       </View>
     );
   }

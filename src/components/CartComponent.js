@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, Image, Dimensions } from 'react-native';
-import { Card, CardItem, Thumbnail, Body, Left, Right, Icon, Button } from 'native-base';
+import { StyleSheet, Text, Image, Dimensions, TouchableOpacity } from 'react-native';
+import { Card, CardItem, Thumbnail, Body, Left, Icon, Button } from 'native-base';
 
 
 const win = Dimensions.get('window');
