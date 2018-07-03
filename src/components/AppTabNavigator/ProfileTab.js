@@ -6,7 +6,7 @@ export default class ProfileTab extends React.Component {
   
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
-      <Icon name="ios-person-outline" style={{ color:tintColor }}  />
+      <Icon name="ios-person" style={{ color:tintColor }}  />
     )
   }
   

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Platform } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 import { Icon } from 'native-base';
 
@@ -40,13 +40,31 @@ const AppTabNavigator = TabNavigator({
     ProfileTab: {
         screen: ProfileTab
     }
+}, {
+  animationEnabled: true,
+  swipeEnabled: true,
+  
+  tabBarPosition: 'bottom',
+  tabBarOptions: {
+    style: {
+      ...Platform.select({
+        android: {
+          backgroundColor: 'white'
+        }
+      })
+    },
+    activeTintColor: '#000',
+    inactiveTintColor: '#d1cece',
+    showLabel: false,
+    showIcon: true
+  }
 });
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

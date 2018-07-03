@@ -6,7 +6,7 @@ export default class AddMediaTab extends React.Component {
 
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
-      <Icon name="ios-add-circle-outline" style={{ color:tintColor }}  />
+      <Icon name="ios-add-circle" style={{ color:tintColor }}  />
     )
   }
 

@@ -6,7 +6,7 @@ export default class LikeTab extends React.Component {
   
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
-      <Icon name="ios-heart-outline" style={{ color:tintColor }}  />
+      <Icon name="ios-heart" style={{ color:tintColor }}  />
     )
   }
   
