@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { Container, Content, Icon, Thumbnail } from 'native-base';
+import { Container, Content, Icon, Header, Left, Right, Body } from 'native-base';
 
 import CartComponent from '../CartComponent';
 import StoryComponent from '../StoryComponent';
@@ -17,16 +17,18 @@ export default class HomeTab extends React.Component {
     return (
       <Container style={styles.container}>
 
+        <Header>
+          <Left><Icon name="ios-camera-outline" style={{ paddingLeft: 10 }} /></Left>
+          <Body><Text style={{ fontSize: 20, fontFamily: 'Avenir' }} >Instagram</Text></Body>
+          <Right><Icon name="ios-send-outline" style={{ paddingRight: 10 }} /></Right>
+        </Header>
+
         <View style={{ height: 100 }} >
           <ScrollView 
             style={{ flex: 1 }} 
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{
-              paddingStart: 5,
-              paddingEnd: 5,
-              alignItems: 'center'
-            }}
+            contentContainerStyle={styles.scrollStories}
           >
             <StoryComponent sourceImage="1" name="kyhoa" key="1"/>
             <StoryComponent sourceImage="2" name="huynhthu" key="2"/>
@@ -55,4 +57,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff'
   },
+  scrollStories: {
+    paddingStart: 5,
+    paddingEnd: 5,
+    alignItems: 'center'
+  }
 });
