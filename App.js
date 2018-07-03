@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
-
+YellowBox.ignoreWarnings(['Class RCTCxxModule']);
 
 import MainScreen from './src/components/MainScreen';
 

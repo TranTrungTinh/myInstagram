@@ -10,6 +10,14 @@ export default class ProfileTab extends React.Component {
     )
   }
   
+  state = {
+    activeIndex: 0
+  }
+
+  segmentButtonHandler = value => {
+    this.setState({ activeIndex: value });
+  }
+
   render() {
     return (
       <Container style={styles.container} >
@@ -47,14 +55,14 @@ export default class ProfileTab extends React.Component {
 
                 <View style={{flexDirection: 'row', paddingTop: 10}} >
                   <Button bordered
-                    style={{ flex: 5, justifyContent: 'center', height: 30, borderColor: 'grey', marginLeft: 10 }}
+                    style={{ flex: 5, justifyContent: 'center', height: 30, borderColor: 'grey', marginLeft: 10, marginRight: 5 }}
                   >
                     <Text style={{fontWeight: '600', fontSize: 15}} >Edit Profile</Text>
                   </Button>
                   <Button bordered
-                    style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: 30, borderColor: 'grey', marginRight: 10, marginLeft: 5}}
+                    style={{ flex: 1, height: 30, borderColor: 'grey', marginRight: 10}}
                   >
-                    <Icon name="settings" style={{ color: 'black', fontSize: 17 }} />
+                    <Icon name="settings" style={{ color: 'black', fontSize: 15 }} />
                   </Button>
                 </View>
 
@@ -64,6 +72,56 @@ export default class ProfileTab extends React.Component {
               <Text style={{fontWeight: '600'}} >Tinh Tran</Text>
             </View>
           </View>
+
+          <View style={{paddingTop: 10}} >
+            <View style={{flexDirection: 'row', justifyContent: 'space-around', borderTopWidth: 0.5, borderBottomWidth: 0.5, borderTopColor: '#eae5e5', borderBottomColor: '#eae5e5' }} >
+              <Button 
+                transparent
+                onPress={() => this.segmentButtonHandler(0)}
+                active={this.state.activeIndex === 0}
+              >
+                <Icon 
+                  type="MaterialIcons" 
+                  name="grid-on" 
+                  style={this.state.activeIndex === 0 ? {} : {color: 'grey'}}
+                />
+              </Button>
+              <Button 
+                transparent
+                onPress={() => this.segmentButtonHandler(1)}
+                active={this.state.activeIndex === 1}
+              >
+                <Icon 
+                  type="MaterialCommunityIcons" 
+                  name="menu" 
+                  style={this.state.activeIndex === 1 ? {} : {color: 'grey'}}
+                />
+              </Button>
+              <Button 
+                transparent
+                onPress={() => this.segmentButtonHandler(2)}
+                active={this.state.activeIndex === 2}
+              >
+                <Icon 
+                  type="MaterialCommunityIcons" 
+                  name="clipboard-account" 
+                  style={this.state.activeIndex === 2 ? {} : {color: 'grey'}}
+                />
+              </Button>
+              <Button 
+                transparent
+                onPress={() => this.segmentButtonHandler(3)}
+                active={this.state.activeIndex === 3}
+              >
+                <Icon 
+                  type="FontAwesome" 
+                  name="bookmark-o"
+                  style={this.state.activeIndex === 3 ? {} : {color: 'grey'}} 
+                />
+              </Button>
+            </View>
+          </View>
+
         </Content>
       </Container>
     );

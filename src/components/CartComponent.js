@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
+import { StyleSheet, Text, Image, Dimensions } from 'react-native';
 import { Card, CardItem, Thumbnail, Body, Left, Right, Icon, Button } from 'native-base';
 
 
@@ -7,6 +7,14 @@ const win = Dimensions.get('window');
 const ratio = win.width / 541;
 
 export default class CartComponent extends React.Component {
+
+  state = {
+    isLike: false
+  }
+
+  toggleLikeHandler = () => {
+    this.setState({ isLike: !this.state.isLike });
+  }
 
   render() {
 
@@ -16,6 +24,10 @@ export default class CartComponent extends React.Component {
       "3": require('../assets/timeline3.jpg'),
       "4": require('../assets/timeline4.jpg')
     }
+
+    const toggleIconHeart = this.state.isLike ? 
+    (<Icon name="ios-heart" style={{ color: "red" }} />) :
+    (<Icon name="ios-heart-outline" style={{ color: "black" }} />)
 
     return (
       <Card >
@@ -35,8 +47,11 @@ export default class CartComponent extends React.Component {
 
         <CardItem style={{ height: 40, paddingBottom: 0 }}>
           <Left>
-            <Button transparent>
-              <Icon name="ios-heart-outline" style={{ color: "black" }} />
+            <Button 
+              transparent
+              onPress={this.toggleLikeHandler}
+            >
+              {toggleIconHeart}
             </Button>
             <Button transparent>
               <Icon name="ios-chatbubbles-outline" style={{ color: "black" }} />
