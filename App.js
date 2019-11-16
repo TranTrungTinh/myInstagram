@@ -1,31 +1,25 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import { YellowBox } from 'react-native';
-YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
-YellowBox.ignoreWarnings(['Class RCTCxxModule']);
+// import React from 'react';
+import { YellowBox } from "react-native";
+YellowBox.ignoreWarnings([
+  "Warning: isMounted(...) is deprecated",
+  "Module RCTImageLoader"
+]);
+YellowBox.ignoreWarnings(["Class RCTCxxModule"]);
 
-import MainScreen from './src/components/MainScreen';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <AppStackNavigator />
-    );
-  }
-}
+import MainScreen from "./src/components/MainScreen";
 
-const AppStackNavigator = StackNavigator({
-  Main: {
-    screen: MainScreen
-  }
-});
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const AppStackNavigator = createStackNavigator(
+  {
+    Main: {
+      screen: MainScreen
+    }
   },
-});
+  {
+    headerMode: "none"
+  }
+);
+
+export default createAppContainer(AppStackNavigator);
